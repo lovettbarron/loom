@@ -15,7 +15,15 @@ void ofApp::setup(){
                      ofVec3f(0,180,0),
                      1000);
     
+    rail3 = new Rail(
+                     ofVec3f(0,500,500),
+                     ofVec3f(90,180,0),
+                     1000);
+    
+    
     rail1->setPartner(rail2->getLoom());
+    rail2->setPartner(rail3->getLoom());
+    rail3->setPartner(rail1->getLoom());
     
     t=0;
 }
@@ -29,6 +37,10 @@ void ofApp::update(){
     rail2->update();
     rail2->moveToPoint(cos(t));
     rail2->setRotation(sin(t));
+
+    rail3->update();
+    rail3->moveToPoint(cos(t));
+    rail3->setRotation(cos(t));
     
     t+=.01;
 }
@@ -41,6 +53,7 @@ void ofApp::draw(){
     ofDrawAxis(100);
     rail1->draw();
     rail2->draw();
+    rail3->draw();
 //    light->disable();
     cam->end();
 }

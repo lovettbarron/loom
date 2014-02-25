@@ -33,5 +33,6 @@ class ofApp : public ofBaseApp{
     ofLight * light;
     Rail * rail1;
     Rail * rail2;
+    Rail * rail3;
     float t;
 };
