@@ -6,13 +6,31 @@ void ofApp::setup(){
     cam->enableMouseInput();
     
     light = new ofLight();
-    rail = new Rail(ofVec3f(0,0,0),ofVec3f(),1000);
+    rail1 = new Rail(ofVec3f(0,0,0),
+                     ofVec3f(),
+                     1000);
+    
+    rail2 = new Rail(
+                     ofVec3f(0,0,500),
+                     ofVec3f(0,180,0),
+                     1000);
+    
+    rail1->setPartner(rail2->getLoom());
+    
+    t=0;
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    rail->update();
-    rail->moveToPoint(pos);
+    rail1->update();
+    rail1->moveToPoint(sin(t));
+    rail1->setRotation(cos(t));
+    
+    rail2->update();
+    rail2->moveToPoint(cos(t));
+    rail2->setRotation(sin(t));
+    
+    t+=.01;
 }
 
 //--------------------------------------------------------------
@@ -21,7 +39,8 @@ void ofApp::draw(){
     cam->begin();
 //    light->enable();
     ofDrawAxis(100);
-    rail->draw();
+    rail1->draw();
+    rail2->draw();
 //    light->disable();
     cam->end();
 }
@@ -33,13 +52,13 @@ void ofApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-    switch(key) {
-        case 'q':
-            pos += 5; break;
-        case 'w':
-            pos -= 5; break;
-        default: break;
-    }
+//    switch(key) {
+//        case 'q':
+//            pos += 5; break;
+//        case 'w':
+//            pos -= 5; break;
+//        default: break;
+//    }
 
 }
 

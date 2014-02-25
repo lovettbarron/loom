@@ -12,6 +12,7 @@
 #include <iostream>
 #include "ofMain.h"
 #include "motor.h"
+#include "loom.h"
 
 class Rail {
 public:
@@ -24,7 +25,12 @@ public:
     void moveToPoint(float p);
     float getPosition();
     
+    void setRotation(float r);
+    
     void reset();
+    
+    Loom& getLoom();
+    void setPartner(Loom& loom);
 private:
     Motor * motor;
     float pos;

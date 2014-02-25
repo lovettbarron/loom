@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include "ofMain.h"
+#include "loom.h"
 
 class Motor {
 public:
@@ -23,10 +24,14 @@ public:
     void setPosition(float loc); // override of rail?
     void rotateToRad();
     float getRotation();
+    void setRotation(float r);
     ofVec2f getBounds();
     ofVec2f getPosition();
+    Loom& getLoom();
+    void setPartner(Loom& _loom);
     
 private:
+    Loom * loom;
     float rotation;
     ofVec3f position; // define by Rail
     ofVec3f angle; // Define by Rail

@@ -31,6 +31,7 @@ class ofApp : public ofBaseApp{
 //        vector<Rail> * rails;
     ofEasyCam * cam;
     ofLight * light;
-    Rail * rail;
-    float pos;
+    Rail * rail1;
+    Rail * rail2;
+    float t;
 };

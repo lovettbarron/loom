@@ -8,12 +8,10 @@
 
 #include "loom.h"
 
-Loom::Loom(Motor& _source, Motor& _target) :
-    source(&_source),
-    target(&_target)
+Loom::Loom()
 {
-    numberOfStrings = 10;
-    spacingBetweenStrings = 5;
+    numberOfStrings = 20;
+    spacingBetweenStrings = 10;
 }
 
 Loom::~Loom() {
@@ -24,15 +22,23 @@ void Loom::update() {
 
 }
 
+void Loom::setTarget(Loom& loom) {
+    target = &loom;
+}
+
 void Loom::draw() {
     float len = (numberOfStrings * spacingBetweenStrings) + (spacingBetweenStrings * 2);
     
-    
     ofPushMatrix();
     ofTranslate(0,0,0);
-    ofRotateY(source->getRotation());
+    ofRotateZ(rotation*90);
     ofSetColor(190,190,255);
-    ofDrawBox(len,2,1);
+    ofDrawBox(2,len,1);
     ofPopMatrix();
     
+}
+
+void Loom::setRotation(float r) {
+    rotation = r;
+//    cout << rotation << endl;
 }

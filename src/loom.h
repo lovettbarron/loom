@@ -10,18 +10,20 @@
 #define __eyeoSim__loom__
 
 #include <iostream>
-#include "motor.h"
+#include "ofMain.h"
 
 class Loom {
 public:
-    Loom(Motor& _source, Motor& _target);
+    Loom();
     ~Loom();
     
     void update();
     void draw();
+    void setRotation(float r);
+    void setTarget(Loom& loom);
 private:
-    Motor * source;
-    Motor * target;
+    Loom * target;
+    float rotation;
     vector<ofPolyline> * string;
     int numberOfStrings;
     float spacingBetweenStrings;
