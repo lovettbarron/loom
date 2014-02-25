@@ -40,10 +40,11 @@ void Loom::update() {
         GLfloat m[16];
         glGetFloatv(GL_MODELVIEW_MATRIX, m);
         ofMatrix4x4 mat(m);
-        ofVec3f point(0,i*spacingBetweenStrings,0);
+        ofVec3f point(0,i*spacingBetweenStrings-(numberOfStrings*spacingBetweenStrings/2),0);
         ofVec3f transformed_point = point * mat;
         points.at(i) = transformed_point;
     }
+    
     ofPopMatrix();
 }
 
