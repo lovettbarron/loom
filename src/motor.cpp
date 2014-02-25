@@ -23,6 +23,7 @@ void Motor::draw() {
     ofTranslate(position);
     ofSetColor(255,190,190);
     ofDrawBox(10,10,10);
+    loom->update();
     loom->draw();
     ofPopMatrix();
     

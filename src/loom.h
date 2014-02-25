@@ -21,10 +21,15 @@ public:
     void draw();
     void setRotation(float r);
     void setTarget(Loom& loom);
+    vector<ofPoint> * getPoints();
 private:
+    
+    void populateString();
+    
     Loom * target;
     float rotation;
-    vector<ofPolyline> * string;
+    vector<ofPolyline> string;
+    vector<ofPoint> points;
     int numberOfStrings;
     float spacingBetweenStrings;
     
