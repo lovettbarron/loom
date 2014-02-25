@@ -24,9 +24,12 @@ void Motor::draw() {
     ofSetColor(255,190,190);
     ofDrawBox(10,10,10);
     loom->update();
-    loom->draw();
     ofPopMatrix();
     
+}
+
+void Motor::drawLoom() {
+    loom->draw();
 }
 
 void Motor::setPosition(float loc) {

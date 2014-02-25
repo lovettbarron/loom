@@ -35,6 +35,10 @@ void Rail::draw() {
     ofDrawBox(length,10,10);
     motor->draw();
     ofPopMatrix();
+    ofPushMatrix();
+    ofLoadMatrix(ofMatrix4x4::newIdentityMatrix());
+    motor->drawLoom();
+    ofPopMatrix();
     
 }
 

@@ -69,9 +69,11 @@ void Loom::draw() {
     vector<ofPoint> * t = target->getPoints();
     
     ofPushMatrix();
+    
     for(int i=0;i<t->size();i++) {
         ofLine(ofPoint(t->at(i).x, t->at(i).y, t->at(i).z), points.at(i));
     }
+    
     ofPopMatrix();
     
 }

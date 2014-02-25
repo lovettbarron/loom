@@ -20,6 +20,7 @@ public:
     
     void update();
     void draw();
+    void drawLoom();
     
     void setPosition(float loc); // override of rail?
     void rotateToRad();
