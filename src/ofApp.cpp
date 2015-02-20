@@ -7,17 +7,17 @@ void ofApp::setup(){
     
     light = new ofLight();
     rail1 = new Rail(ofVec3f(0,0,0),
-                     ofVec3f(),
+                     ofVec3f(-45,0,0),
                      1000);
     
     rail2 = new Rail(
                      ofVec3f(0,0,500),
-                     ofVec3f(0,180,0),
+                     ofVec3f(0,180,45),
                      1000);
     
     rail3 = new Rail(
-                     ofVec3f(0,500,500),
-                     ofVec3f(90,180,0),
+                     ofVec3f(500,500,500),
+                     ofVec3f(0,180,90),
                      1000);
     
     
